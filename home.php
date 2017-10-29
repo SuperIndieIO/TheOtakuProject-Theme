@@ -101,8 +101,8 @@
     </main>
     <footer>
         <a href='<?php echo esc_url( home_url( '/' ) ); ?>'>
-            <img id='SI-FooterLogo' src='<?php echo get_template_directory_uri(); ?>/img/SuperIndieIOSmallLogo.png'/></a>
-        <div id='SI-FooterInfo'>
+            <img id='OP-FooterLogo' src='<?php echo get_template_directory_uri(); ?>/img/SuperIndieIOSmallLogo.png'/></a>
+        <div id='OP-FooterInfo'>
             <a href='<?php echo esc_url( home_url( '/' ) ); ?>about-us'>About Us</a>
             <a href='<?php echo esc_url( home_url( '/' ) ); ?>contact-us'>Contact Us</a>
             <a href='<?php echo esc_url( home_url( '/' ) ); ?>privacy-policy'>Privacy Policy</a>
@@ -110,3 +110,4 @@
         </div>
     </footer>
     <!--Scripts-->
+</body>

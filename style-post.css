@@ -1,0 +1,385 @@
+/*
+Post Page Stylesheet
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5F2;
+    overflow: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+a {
+    color: #212121;
+    }
+header {
+    max-height: 60px;
+    margin: 16px auto 0 auto;
+    }
+main {
+    max-width: 1296px;
+    margin: 16px auto 0px auto;
+    overflow: auto;
+    }
+aside {
+    overflow: auto;
+    }
+footer {
+    width: 100%;
+    margin: 32px auto 16px auto;
+    }
+blockquote {
+    border-left: 8px solid #424242;
+    padding: 0 0 0 16px;
+    margin: 0 32px;
+}
+
+/*Logo Styles*/
+#OP-LogoLarge {
+    display: none;
+    margin: 0 auto;
+    }
+#OP-LogoSmall {
+    display: none;
+    margin: 0 auto;
+    }
+
+/*The Otaku Project Post Styles */
+#OP-Post {
+    width: 100%;
+    position: relative;
+    border-radius: 4px;
+    }
+#OP-PostImage {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    }
+#OP-PostBody {
+    width: calc(100% - 384px);
+    margin: 0 32px 16px 16px;
+    float: left;
+    font-family: 'Roboto';
+    font-size: 18px;
+    line-height: 150%;
+    overflow: auto;
+    }
+#OP-PostHeadline {
+    margin: 24px 0 24px 0;
+    color: #484848;
+    font-size: 3em;
+    font-family: 'Roboto';
+    font-weight: 900;
+    line-height: 1em;
+    vertical-align: bottom;
+    }
+#OP-PostSubHeadline {
+    margin: 16px 0;
+    color: #757575;
+    font-style: italic;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    }
+#OP-PostAuthor {
+    margin: 16px 0;
+    padding: 6px 0;
+    color: #757575;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-top: #757575 1px solid;
+    border-bottom: #757575 1px solid;
+    }
+#OP-PostAuthor > a {
+    color: #484848;
+    text-decoration: none;
+    }
+#OP-PostDate {
+    float: right;
+    }
+#OP-PostBodyText {
+    color: #484848;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    }
+#OP-PostBodyText > h3 {
+    margin: 1em 0;
+    font-size: 24px;
+    }
+#OP-PostBodyText > h4, h5, h6 {
+    margin: 1em 0;
+    font-size: 20px;
+    }
+#OP-PostBodyText > a, a:visited {
+    color: #212121;
+    }
+#OP-PostSocialMedia {
+    display: inline-block;
+    padding: 8px 0 1px 0;
+    margin: 0 0 16px 0;
+    width: 100%;
+    border-top: #484848 1px solid;
+    border-bottom: #484848 1px solid;
+    text-align: center;
+    }
+
+/*The Otaku Project Related and Sidebar Posts*/
+#OP-RelatedCategory {
+    display: grid;
+    margin: 0 0 16px 0;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    overflow: auto;
+}
+.OP-Sidebar {
+    position: relative;
+    float: left;
+    }
+.OP-SidebarSection {
+    width: 320px;
+    height: 180px;
+    margin: 0 auto 16px auto;
+    position: relative;
+    background-color: #CCC;
+    border-radius: 4px;
+    }
+.OP-SidebarSectionTitle {
+    display: inline-block;
+    margin: 0 0 16px 0;
+    color: #484848;
+    float: left;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    }
+.OP-SidebarOther {
+    width: 100%;
+    margin: 0 auto 16px auto;
+    float: left;
+    }
+.OP-PostSmall { 
+    height: 0;
+    padding-top: 42%;
+    position: relative;
+    border-radius: 4px;
+    }
+.OP-PostSmallText {
+    margin: 16px;
+    position: absolute;
+    bottom: 0;
+    color: #f6f6f6;
+    font-family: 'Roboto';
+    text-shadow: 2px 2px #484848;
+    overflow: hidden;
+    }
+
+/*Footer IDs */
+#OP-FooterLogo {
+    display: block;
+    margin: 16px auto;
+    }
+#OP-FooterSocialIcons {
+    display: inline-block;
+    padding: 8px 0 1px 0;
+    width: 100%;
+    text-align: center;
+    }
+#OP-FooterInfo {
+    display: table;
+    margin: 8px auto;
+    }
+#OP-FooterInfo > a {
+    display: inline-table;
+    margin: 0 8px;
+    color: #484848;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    }
+
+/*Social Media Classes*/
+.social-image {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 0 6px;
+    }
+.social-image-follow {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0 6px;
+    }
+/*Universal Sub Classes*/
+.img-background {
+    background: no-repeat center;
+    background-size: cover;
+    }
+.italics {
+    font-style: italic;
+    }
+
+/*Embed-Container*/
+.embed-container {
+    position: relative;
+    margin: 0 0 1em 0;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; 
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+}
+
+/*Large Desktop Screen Sizing*/
+@media only screen and (min-width: 1328px) {
+    aside {
+        max-width: 320px;
+        margin: 16px 0 0 0;
+        }
+    #OP-RelatedCategory {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .OP-SidebarOther {
+        max-width: 300px;
+		margin: 0 10px 16px 10px;
+        }
+}
+
+/*Smaller Desktop Screen Sizes*/
+@media only screen and (min-width: 1056px) and (max-width: 1327px) {
+    main {
+        max-width: 100%;
+        margin: 16px 16px 0 16px;
+        }
+    aside {
+        max-width: 320px;
+        margin: 16px 0 0 0;
+        }
+    #OP-MainPosts {
+        width: calc(100% - 336px);
+        }
+    #OP-PostBody {
+        width: calc(100% - 384px);
+        }
+    #OP-RelatedCategory {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .OP-SidebarOther {
+        max-width: 300px;
+		max-height: 250px
+		margin: 0 10px 16px 10px;;
+        }
+}
+
+/*Tablet Screen Sizes*/
+@media only screen and (min-width: 640px) and (max-width: 1055px) {
+    main {
+        max-width: 100%;
+        margin: 16px 16px 0 16px;
+    }
+    #OP-MainPosts {
+        width: 100%;
+        float: none;
+        }
+    #OP-PostBody {
+        width: calc(100% - 32px);
+        margin: 0 16px;
+        float: none;
+        }
+    #OP-RelatedCategory {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .OP-Sidebar {
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+        }
+    .OP-PostSmall {
+        padding-top: 56.25%;
+    }
+    .OP-SidebarSection {
+        width: calc((100% - 32px)/2);
+        height: 0;
+        padding-top: 28.125%;
+        display: inline-block;
+        margin: 0 6px 16px 6px;
+        }
+}
+
+/*Mobile Screen Sizes*/
+@media only screen and (max-width: 639px) {
+    main {
+        max-width: 100%;
+        margin: 16px 8px;
+        }
+    #OP-MainPosts {
+        width: 100%;
+        float: none;
+        }
+    #OP-PostBody {
+        width: calc(100% - 16px);
+        margin: 0 8px;
+        font-size: 16px;
+        float: none;
+        }
+    .OP-Sidebar {
+        width: 100%;
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+        display: inline-block;
+        }
+    #OP-PostHeadline {
+        margin: 16px 0;
+        font-size: 2em;
+        }
+    #OP-PostSubHeadline {
+        margin: 8px 0;
+        font-size: 20px;
+        }
+    #OP-RelatedCategory {
+        grid-template-columns: 1fr;
+    }
+    .OP-SidebarSection {
+        width: 100%;
+        padding-top: 28.125%;
+        height: 0;
+        margin: 0 auto 16px auto;
+        }
+    input[type="submit"] {
+        float: none;
+        }
+}
+
+@media only screen and (min-width: 640px) {
+    #OP-LogoLarge {
+        display: block;
+        }
+    #OP-LogoSmall {
+        display: none;
+        }
+}
+@media only screen and (max-width: 639px) {
+    #OP-LogoLarge {
+        display: none;
+        }
+    #OP-LogoSmall {
+        display: block;
+        }
+}
+@media only screen and (max-width: 420px) {
+    #OP-PostAuthor {
+        font-size: 15px;
+        }
+}
+::-webkit-scrollbar { 
+    display: none; 
+    }
