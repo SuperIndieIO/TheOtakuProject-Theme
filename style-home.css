@@ -1,0 +1,334 @@
+/*Home-Page Stylesheet*/
+
+/*Standard HTML Elements*/
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5F2;
+    overflow: auto;
+    }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    }
+a {
+    color: #212121;
+    }
+header {
+    max-height: 60px;
+    margin: 16px auto 0 auto;
+    }
+main {
+    overflow: auto;
+    }
+footer {
+    width: 100%;
+    margin: 32px auto;
+    }
+
+/*The Otaku Project Logo Styles*/
+#OP-LogoLarge {
+    display: none;
+    margin: 0 auto;
+    }
+#OP-LogoSmall {
+    display: none;
+    margin: 0 auto;
+    }
+
+/*The Otaku Project Featured Post*/
+.OP-PostLarge {
+    margin: 0 0 16px 0;
+    position: relative;
+    border-radius: 4px;
+    }
+.OP-Headline {
+    margin: 16px;
+    position: absolute;
+    bottom: 0;
+    color: #f6f6f6;
+    font-family: 'Roboto';
+    vertical-align: bottom;
+    }
+.OP-PostLargeHeadline {
+    font-size: 1em;
+    }
+.OP-PostLargeSubHeadline {
+    max-height: 0;
+    margin: 0;
+    color: #f6f6f6;
+    font-size: 0.5em;
+    font-family: 'Roboto';
+    font-weight: 400;
+    text-shadow: 2px 2px #484848;
+    vertical-align: bottom;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 1s ease, visibility 1s;
+    }
+.OP-PostLarge:hover .OP-PostLargeSubHeadline {
+    visibility: visible;
+    max-height: 4em;
+    }
+
+/*The Otaku Project Semi Featured Section*/
+.OP-FeaturedGrid {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin: 16px 0;
+}
+.OP-SemiFeatured { 
+    border-radius: 4px;
+    position: relative;
+    }
+.OP-SemiFeaturedText {
+    margin: 16px;
+    position: absolute;
+    bottom: 0;
+    color: #f6f6f6;
+    font-family: 'Roboto';
+    text-shadow: 2px 2px #484848;
+    overflow: hidden;
+    }
+.OP-SemiFeaturedHeadline {
+    font-size: 2em;
+    font-weight: 900;
+    }
+.OP-SemiFeaturedSubHeadline {
+    max-height: 0;
+    margin: 0;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 500;
+    transition: max-height 1s ease, visibility 1s;
+    }
+.OP-SemiFeatured:hover .OP-SemiFeaturedSubHeadline {
+    max-height: 4em;
+    visibility: visible;
+    }
+
+/*The Otaku Project Main Posts*/
+#OP-MainPosts {
+    margin: 16px 0 0 0;
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    overflow: auto;
+    }
+#OP-PostNav {
+    display: table;
+    margin: 0 auto;
+    }
+.OP-PostSmall { 
+    height: 0;
+    position: relative;
+    border-radius: 4px;
+    }
+.OP-PostSmallText {
+    margin: 16px;
+    position: absolute;
+    bottom: 0;
+    color: #f6f6f6;
+    font-family: 'Roboto';
+    text-shadow: 2px 2px #484848;
+    overflow: hidden;
+    }
+.OP-PostSmallHeadline {
+    font-size: 1.5em;
+}
+.OP-PostSmallSubHeadline {
+    max-height: 0;
+    margin: 0;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 500;
+    transition: max-height 1s ease, visibility 1s;
+    }
+.OP-PostSmall:hover .OP-PostSmallSubHeadline {
+    max-height: 4em;
+    visibility: visible;
+    }
+
+/*The Otaku Project Footer*/
+#OP-FooterLogo {
+    display: block;
+    margin: 16px auto;
+    }
+#OP-FooterInfo {
+    display: table;
+    margin: 16px auto;
+    }
+#OP-FooterInfo > a {
+    display: inline-table;
+    margin: 0 8px;
+    color: #484848;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    }
+
+/*Navigation */
+.navigation ul {
+    padding: 0;
+}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    text-decoration:none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.navigation li {
+    display: inline;
+}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    padding: 12px;
+    color: #484848;
+}
+.navigation li a:hover,
+.navigation li.active a {
+    color: #484848;
+    font-weight: 900;
+}
+
+/*Universal Classes*/
+.img-background {
+    background: no-repeat center;
+    background-size: cover;
+    }
+
+/*Screen Sizing*/
+@media only screen and (min-width: 1297px) {
+    
+    main {
+        max-width: 1296px;
+        margin: 16px auto 0px auto;
+        }
+    .OP-PostLarge {
+        padding-top: 42%;
+    }
+    .OP-PostSmall {
+        padding-top: 56.25%;
+    }
+    #OP-FeaturedGridA {
+        grid-template-columns: 1fr 2fr;
+    }
+    #OP-FeaturedGridB {
+        grid-template-columns: 2fr 1fr;
+    }
+    #OP-MainPosts {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .OP-Headline {
+        font-size: 3em;
+        text-shadow: 4px 4px 2px #484848;
+        }
+    .grid-a {
+        padding-top: 56.25%;
+        }
+    .grid-b {
+        padding-top: 28.125%;
+        }
+}
+@media only screen and (min-width: 641px) and (max-width: 1296px) {
+    main {
+        margin: 16px 16px 0px 16px;
+        }
+    .OP-PostSmall {
+        padding-top: 56.25%;
+    }
+    .OP-PostLarge {
+        padding-top: 42%;
+    }
+    #OP-FeaturedGridA {
+        grid-template-columns: 2fr 3fr;
+    }
+    #OP-FeaturedGridB {
+        grid-template-columns: 3fr 2fr;
+    }
+    #OP-MainPosts {
+        grid-template-columns: 1fr 1fr;
+    }
+    .OP-Headline {
+        font-size: 3em;
+        text-shadow: 4px 4px 2px #484848;
+        }
+    .OP-SemiFeaturedHeadline {
+        font-size: 1.5em;
+    }
+    .grid-a {
+        padding-top: 84%;
+        }
+    .grid-b {
+        padding-top: 56.25%;
+
+        }
+    
+}
+@media only screen and (max-width: 640px) {
+   
+    main {
+        margin: 16px 8px 0px 8px;
+        }
+    .OP-PostLarge {
+        padding-top: 56.25%;
+    }
+    .OP-PostSmall {
+        padding-top: 28.125%;
+    }
+    #OP-FeaturedGridA {
+        grid-template-columns: 1fr;
+    }
+    #OP-FeaturedGridB {
+        grid-template-columns: 1fr;
+    }
+    #OP-MainPosts {
+        grid-template-columns: 1fr;
+    }
+    .OP-Headline {
+        font-size: 2em;
+        text-shadow: 2px 2px 4px #484848;
+        }
+    .OP-SemiFeaturedHeadline {
+        font-size: 1.5em;
+    }
+    .OP-PostSmallHeadline {
+    font-size: 1.25em;
+    }
+    .OP-PostSmallText {
+        margin: 8px;
+    }
+    .grid-a {
+        padding-top: 42%;
+        }
+    .grid-b {
+        padding-top: 42%;
+        }
+}
+
+/*Logo Display*/
+@media only screen and (min-width: 640px)
+{
+    #OP-LogoLarge {
+        display: block;
+        }
+    #OP-LogoSmall {
+        display: none;
+        }
+}
+@media only screen and (max-width: 639px)
+{
+    #OP-LogoLarge {
+        display: none;
+        }
+    #OP-LogoSmall {
+        display: block;
+        }
+}
+::-webkit-scrollbar { 
+    display: none; 
+    }
