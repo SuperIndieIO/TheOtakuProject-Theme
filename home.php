@@ -35,7 +35,7 @@
             <?php $SFS++ ?>
 
             <?php $post = get_the_ID(); ?>   
-            <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' ); ?>
+            <?php if ( $SFS % 2 !== 0 ) {$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' );} else {$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-medium' );}?>
              <a href='<?php echo get_the_permalink(); ?>'>
             <div class='OP-SemiFeatured <?php if ( $SFS % 2 !== 0 ) {echo 'grid-a'; $secondary = $post;} else {echo 'grid-b'; $tertiary = $post;} ?> img-background' style='background-image: linear-gradient(to bottom, rgba( 0, 0, 0, 0) 0%, rgba( 0, 0, 0, .25) 50%, rgba( 0, 0, 0, 1) 100%), url("<?php echo $thumb[0] ?>'>
                 <div class='OP-SemiFeaturedText'>
@@ -56,7 +56,7 @@
             <?php $SFS++ ?>
 
             <?php $post = get_the_ID(); ?>   
-            <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' ); ?>
+            <?php if ( $SFS % 2 !== 0 ) {$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-medium' );} else {$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' );}?>
              <a href='<?php echo get_the_permalink(); ?>'>
             <div class='OP-SemiFeatured <?php if ( $SFS % 2 !== 0 ) {echo 'grid-b'; $fourth = $post;} else {echo 'grid-a'; $fifth = $post;} ?> img-background' style='background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 1) 100%), url("<?php echo $thumb[0] ?>'>
                 <div class='OP-SemiFeaturedText'>
@@ -99,15 +99,5 @@
         </div>
         
     </main>
-    <footer>
-        <a href='<?php echo esc_url( home_url( '/' ) ); ?>'>
-            <img id='OP-FooterLogo' src='<?php echo get_template_directory_uri(); ?>/img/SuperIndieIOSmallLogo.png'/></a>
-        <div id='OP-FooterInfo'>
-            <a href='<?php echo esc_url( home_url( '/' ) ); ?>about-us'>About Us</a>
-            <a href='<?php echo esc_url( home_url( '/' ) ); ?>contact-us'>Contact Us</a>
-            <a href='<?php echo esc_url( home_url( '/' ) ); ?>privacy-policy'>Privacy Policy</a>
-            <a href='<?php echo esc_url( home_url( '/' ) ); ?>?s=search'>Search</a>
-        </div>
-    </footer>
-    <!--Scripts-->
+    <?php get_footer('home'); ?>
 </body>

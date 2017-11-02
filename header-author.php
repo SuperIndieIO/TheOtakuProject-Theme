@@ -15,36 +15,30 @@ _________          _______    _______ _________ _______  _                   ___
 <head>
     
     <!--Styles-->
-    <link rel="stylesheet"  type="text/css" href='<?php echo get_template_directory_uri(); ?>/style-post.css?r=<?php echo time(); ?>'/>
-    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+    <link rel="stylesheet"  type="text/css" href='<?php echo get_template_directory_uri(); ?>/style-author.css'/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    <meta name='viewport' content='initial-scale=1'/>   
+    <meta name='viewport' content='initial-scale=1'/>
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <meta name='theme-color' content='#E5E5F2' />
     
     <!--Meta Info-->
-    <?php the_post(); ?><!--Gather Post Excerpt Information for Meta Tags-->  
-    <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-large' ); ?>
-    <title><?php echo get_the_title(); ?> | The Otaku Project</title>
-    <meta name='description' content='<?php echo(get_the_excerpt()); ?>'>
+    <title>Author - The Otaku Project</title>
+    <meta name='description' content='The Latest Stories in Indie and Independent Games Development'>
     <meta name='language' content='english'>
     
-    <!--Temporary AMP Support Removal-->
-    <!--<link rel="amphtml" href='amp/'>-->
-    
     <!--Facebook Meta Info-->
-	<meta property='og:type' content='article'/>
-	<meta property='og:title' content='<?php echo get_the_title(); ?>'/>
-	<meta property='og:url' content='<?php echo get_the_permalink(); ?>'/>
-	<meta property='og:image' content='<?php echo $thumb[0] ?>'/>
-	<meta property='og:description' content='<?php get_the_excerpt(); ?>'/>
+	<meta property='og:title' content='The Otaku Project'/>
+	<meta property='og:type' content='website'/>
+	<meta property='og:url' content='theotakuproject.com'/>
+	<meta property='og:description' content='The Latest in Indie and Independent Games Development'/>
 
     <!--Twitter Meta Info-->
-	<meta name='twitter:card' content='summary_large_image'>
-	<meta name='twitter:url' content='<?php echo get_the_permalink(); ?>'>
-	<meta name='twitter:title' content='<?php echo get_the_title(); ?>'>
-	<meta name='twitter:image' content='<?php echo $thumb[0] ?>'>
-	<meta name='twitter:description' content='<?php echo strip_tags(get_the_excerpt($post->ID)); ?>'>
+	<meta name='twitter:card' content='summary'/>
+	<meta name='twitter:url' content='theotakuproject.com'/>
+	<meta name='twitter:title' content='The Otaku Project'>
+	<meta name='twitter:image' content='The Latest in Indie and Independent Games Development'>
     
     <!--Adsense Code-->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
 </head>

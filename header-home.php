@@ -15,7 +15,7 @@ _________          _______    _______ _________ _______  _                   ___
 <head>
     
     <!--Styles-->
-    <link rel="stylesheet"  type="text/css" href='<?php echo get_template_directory_uri(); ?>/style-home.css'/>
+    <link rel="stylesheet"  type="text/css" href='<?php echo get_template_directory_uri(); ?>/style-home.css?r=<?php echo time(); ?>'/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <meta name='viewport' content='initial-scale=1'/>
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />

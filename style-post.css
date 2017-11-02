@@ -179,7 +179,7 @@ blockquote {
 /*Footer IDs */
 #OP-FooterLogo {
     display: block;
-    margin: 16px auto;
+    margin: 0 auto;
     }
 #OP-FooterSocialIcons {
     display: inline-block;
@@ -211,7 +211,9 @@ blockquote {
     width: 24px;
     height: 24px;
     margin: 0 6px;
+    border-radius: 50%;
     }
+
 /*Universal Sub Classes*/
 .img-background {
     background: no-repeat center;

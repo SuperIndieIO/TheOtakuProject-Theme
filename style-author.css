@@ -1,0 +1,228 @@
+/*
+Author Page Stylesheet
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #E0F2F1;
+    overflow: auto;
+    }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Roboto';
+    }
+a {
+    color: #212121;
+    text-decoration: none;
+    }
+header {
+    max-height: 60px;
+    margin: 16px auto 0 auto;
+    }
+main {
+    max-width: 1296px;
+    margin: 32px auto 0px auto;
+    overflow: auto;
+    }
+footer {
+    width: 100%;
+    margin: 32px auto;
+    }
+
+/*SI Logo Styles*/
+#OP-LogoLarge {
+    display: none;
+    margin: 0 auto;
+    }
+#OP-LogoSmall {
+    display: none;
+    margin: 0 auto;
+    }
+
+/*SI Footer IDs*/
+#OP-FooterLogo {
+    display: block;
+    margin: 16px auto;
+    }
+#OP-FooterInfo {
+    display: table;
+    margin: 16px auto;
+    }
+#OP-FooterInfo > a {
+    display: inline-table;
+    margin: 0 8px;
+    color: #484848;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    }
+#OP-FooterSocialIcons {
+    margin: 0 auto -12px auto;
+    display: table;
+}
+#OP-FooterSocialIcons > a {
+    text-decoration: none;
+}
+
+/*SI Author IDs*/
+#OP-MainAuthor {
+    overflow: auto;
+    color: #484848;
+}
+#OP-AuthorName {
+    margin: 0 auto 8px auto;
+    font-size: 3em;
+    font-weight: 900;
+    line-height: 1em;
+    vertical-align: bottom;
+}
+#OP-AuthorTitle {
+    margin: 0 0 16px 0;
+    font-weight: 300;
+}
+#OP-AuthorImage > img {
+    border-radius: 50%;
+}
+#OP-AuthorText {
+    font-size: 1.15em;
+}
+
+/*Main Posts*/
+#OP-MainPosts {
+    margin: 16px 0 0 0;
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    overflow: auto;
+    }
+.OP-PostSmall { 
+    height: 0;
+    position: relative;
+    border-radius: 4px;
+    }
+.OP-PostSmallText {
+    margin: 16px;
+    position: absolute;
+    bottom: 0;
+    color: #f6f6f6;
+    font-family: 'Roboto';
+    text-shadow: 2px 2px #484848;
+    overflow: hidden;
+    }
+.OP-PostSmallHeadline {
+    font-size: 1.5em;
+}
+.OP-PostSmallSubHeadline {
+    max-height: 0;
+    margin: 0;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 500;
+    transition: max-height 1s ease, visibility 1s;
+    }
+.OP-PostSmall:hover .OP-PostSmallSubHeadline {
+    max-height: 4em;
+    visibility: visible;
+    }
+
+/*Navigation */
+#OP-PostNav {
+    display: table;
+    margin: 0 auto;
+    }
+.navigation ul {
+    padding: 0;
+}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    text-decoration:none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.navigation li {
+    display: inline;
+}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    padding: 12px;
+    color: #484848;
+}
+.navigation li a:hover,
+.navigation li.active a {
+    color: #484848;
+    font-weight: 900;
+}
+
+/*Social Media Classes*/
+.social-image-follow {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    border-radius: 50%;
+    }
+
+/*Universal Classes*/
+.img-background {
+    background: no-repeat center;
+    background-size: cover;
+    }
+
+/*Screen Sizes*/
+@media only screen and (max-width: 1296px) {
+    main {
+        margin: 32px 16px 0px 16px;
+    }
+}
+@media only screen and (min-width: 1297px) {
+    .OP-PostSmall {
+        padding-top: 56.25%;
+    }
+    #OP-MainPosts {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 640px) {
+    #OP-AuthorImage {
+        margin: 0 16px 0 0;
+        float: left;
+    }
+}
+@media only screen and (max-width: 639px) {
+    #OP-AuthorImage > img {
+        display: block;
+        margin: 0 auto 16px auto;
+    }
+    #OP-AuthorTitle {
+        font-size: 1.25em;
+    }
+}
+
+/*Logo Display*/
+@media only screen and (min-width: 640px)
+{
+    #OP-LogoLarge {
+        display: block;
+        }
+    #OP-LogoSmall {
+        display: none;
+        }
+}
+@media only screen and (max-width: 639px)
+{
+    #OP-LogoLarge {
+        display: none;
+        }
+    #OP-LogoSmall {
+        display: block;
+        }
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+    }

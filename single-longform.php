@@ -1,6 +1,11 @@
-<?php get_header('post'); ?>
+<?php /*
+Template Name: Longform Article Template
+Template Post Type: post
+*/
+get_header('post');
+?>
 <body>
-    <!--Header logo for The Otaku Project-->
+    <!--Header logo for SuperIndieIO-->
     <header>
         <a href='<?php echo esc_url( home_url( '/' ) ); ?>'>
             <img id='OP-LogoLarge' src='<?php echo get_template_directory_uri(); ?>/img/TheOtakuProjectLargeLogo.png' />
@@ -21,7 +26,7 @@
             <img id='OP-PostImage' src='<?php echo $thumb[0] ?>' />
 			<meta itemprop='url' content='<?php echo $thumb[0] ?>'/>
 			<meta itemprop='width' content='1296'/>
-			<meta itemprop='height' content='720'/>
+			<meta itemprop='height' content='729'/>
 		</span>
         </div>
         <!--Article content-->
@@ -51,7 +56,7 @@
             
             <!--Category related articles-->
             <div id='OP-RelatedCategory'>
-                <?php $related = get_posts( array( 'category__in' => wp_get_post_categories($post), 'numberposts' => 3, 'post__not_in' => array($post), 'category__not_in' => 'Featured' ) ); ?>
+                <?php $related = get_posts( array( 'category__in' => wp_get_post_categories($post), 'numberposts' => 3, 'post__not_in' => array($post), 'category__not_in' => 'featured' ) ); ?>
                 <?php if( $related ) foreach( $related as $post ) {?>
                 <?php $post = get_the_ID(); ?>
                 <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' ); ?>
@@ -62,41 +67,77 @@
         </div>
         <!--Sidebar-->
         <aside>
+            <!--Advertising-->
             
-        <!--Tag related articles-->
-        <div class='OP-Sidebar'>
-            <?php wp_reset_query(); ?>
-        <?php //for use in the loop, list 5 post titles related to first tag on current post
-            $backup = $post;  // backup the current object
-            $tags = wp_get_post_tags($post->ID);
-            $tagIDs = array();
-            if ($tags) {
-                $tagcount = count($tags);
-                for ($i = 0; $i < $tagcount; $i++) {
-                    $tagIDs[$i] = $tags[$i]->term_id;
+            <div class='OP-Sidebar'>
+                <?php wp_reset_query(); ?>
+                <?php //for use in the loop, list 5 post titles related to first tag on current post
+                $backup = $post;  // backup the current object
+                $tags = wp_get_post_tags($post->ID);
+                $tagIDs = array();
+                if ($tags) {
+                    $tagcount = count($tags);
+                    for ($i = 0; $i < $tagcount; $i++) {
+                        $tagIDs[$i] = $tags[$i]->term_id;
+                    }
+                    $args=array(
+                        'tag__in' => $tagIDs,
+                        'post__not_in' => array($post->ID),
+                        'showposts'=>2,
+                        'caller_get_posts'=>1
+                    );
+                    $my_query = new WP_Query($args);
+                    if( $my_query->have_posts() ) {
+                        while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' ); ?>
+                <a href='<?php echo get_the_permalink(); ?>'>
+                    <div class='OP-SidebarSection img-background' style='background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.65) 100%), url("<?php echo $thumb[0] ?>");'><h3 class='OP-PostSmallText'><?php echo get_the_title(); ?></h3></div></a>
+                 <?php endwhile;
+                    } else { ?><!--Put Something Here-->
+                <?php }
                 }
-                $args=array(
-                    'tag__in' => $tagIDs,
-                    'post__not_in' => array($post->ID),
-                    'showposts'=>2,
-                    'caller_get_posts'=>1
-                );
-                $my_query = new WP_Query($args);
-                if( $my_query->have_posts() ) {
-                    while ($my_query->have_posts()) : $my_query->the_post(); ?>
-            <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'sidebar-image' ); ?>
-            <a href='<?php echo get_the_permalink(); ?>'>
-                <div class='OP-SidebarSection img-background' style='background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.65) 100%), url("<?php echo $thumb[0] ?>");'><h3 class='OP-PostSmallText'><?php echo get_the_title(); ?></h3></div></a>
-             <?php endwhile;
-                } else { ?><!--Put Something Here-->
-            <?php }
-            }
-            $post = $backup;  // copy it back
-            wp_reset_query(); // to use the original query again
-            ?>
-        </div>
+                $post = $backup;  // copy it back
+                wp_reset_query(); // to use the original query again
+                ?>
+            </div>
+            <!--Advertising-->
+
+            <!--Tag related articles-->
+            <div class='OP-Sidebar'>
+                <?php //for use in the loop, list 5 post titles related to first tag on current post
+                $backup = $post;  // backup the current object
+                $tags = wp_get_post_tags($post->ID);
+                $tagIDs = array();
+                if ($tags) {
+                    $tagcount = count($tags);
+                    for ($i = 0; $i < $tagcount; $i++) {
+                        $tagIDs[$i] = $tags[$i]->term_id;
+                    }
+                    $args=array(
+                        'tag__in' => $tagIDs,
+                        'post__not_in' => array($post->ID),
+                        'showposts'=>2,
+                        'caller_get_posts'=>1,
+                        'offset' => 2
+                    );
+                    $my_query = new WP_Query($args);
+                    if( $my_query->have_posts() ) {
+                        while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-small' ); ?>
+                <a href='<?php echo get_the_permalink(); ?>'>
+                    <div class='OP-SidebarSection img-background' style='background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.65) 100%), url("<?php echo $thumb[0] ?>");'><h3 class='OP-PostSmallText'><?php echo get_the_title(); ?></h3></div></a>
+                 <?php endwhile;
+                    } else { ?><!--Put Something Here-->
+                <?php }
+                }
+                $post = $backup;  // copy it back
+                wp_reset_query(); // to use the original query again
+                ?>
+            </div>
+
+            <!--Advertising-->
+        
         </aside>
     </main>
     <?php get_footer('post'); ?>
-    </span>
 </body>

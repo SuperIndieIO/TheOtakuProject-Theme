@@ -46,6 +46,7 @@ footer {
     position: absolute;
     bottom: 0;
     color: #f6f6f6;
+    text-shadow: -1px 0 #484848, 0 1px #484848, 1px 0 #484848, 0 -1px #484848, -2px 0 #484848, 0 2px #484848, 2px 0 #484848, 0 -2px #484848;
     font-family: 'Roboto';
     vertical-align: bottom;
     }
@@ -59,7 +60,6 @@ footer {
     font-size: 0.5em;
     font-family: 'Roboto';
     font-weight: 400;
-    text-shadow: 2px 2px #484848;
     vertical-align: bottom;
     overflow: hidden;
     visibility: hidden;
@@ -149,14 +149,20 @@ footer {
     visibility: visible;
     }
 
-/*The Otaku Project Footer*/
+/*Footer IDs */
 #OP-FooterLogo {
     display: block;
-    margin: 16px auto;
+    margin: 0 auto;
+    }
+#OP-FooterSocialIcons {
+    display: inline-block;
+    padding: 8px 0 1px 0;
+    width: 100%;
+    text-align: center;
     }
 #OP-FooterInfo {
     display: table;
-    margin: 16px auto;
+    margin: 8px auto;
     }
 #OP-FooterInfo > a {
     display: inline-table;
@@ -164,6 +170,21 @@ footer {
     color: #484848;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
+    }
+
+/*Social Media Classes*/
+.social-image {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 0 6px;
+    }
+.social-image-follow {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0 6px;
+    border-radius: 50%;
     }
 
 /*Navigation */
@@ -225,7 +246,6 @@ footer {
     }
     .OP-Headline {
         font-size: 3em;
-        text-shadow: 4px 4px 2px #484848;
         }
     .grid-a {
         padding-top: 56.25%;
@@ -255,7 +275,6 @@ footer {
     }
     .OP-Headline {
         font-size: 3em;
-        text-shadow: 4px 4px 2px #484848;
         }
     .OP-SemiFeaturedHeadline {
         font-size: 1.5em;
@@ -291,7 +310,6 @@ footer {
     }
     .OP-Headline {
         font-size: 2em;
-        text-shadow: 2px 2px 4px #484848;
         }
     .OP-SemiFeaturedHeadline {
         font-size: 1.5em;
